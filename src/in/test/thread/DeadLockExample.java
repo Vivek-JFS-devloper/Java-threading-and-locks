@@ -47,7 +47,11 @@ class Task1 implements Runnable {
 
 	@Override
 	public void run() {
-		pan.writeWithPanAndPaper(paper);
+		
+		synchronized (paper) {
+			
+			pan.writeWithPanAndPaper(paper);
+		}
 
 	}
 
